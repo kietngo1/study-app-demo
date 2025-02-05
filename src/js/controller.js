@@ -4,6 +4,7 @@ import searchView from './views/searchView';
 import resultsView from './views/resultsView';
 import paginationView from './views/paginationView';
 import bookmarkView from './views/bookmarkView';
+import addRecipeView from './views/addRecipeView';
 
 import 'core-js/stable'; // pollyfilling anything else
 import 'regenerator-runtime/runtime'; // pollyfilling async/await
@@ -87,9 +88,10 @@ const controlRenderBookmarksInit = function() {
   bookmarkView.render(model.state.bookmarked);
 }
 
-const newFeature = function() {
-  console.log('Welcome to app');
+const controlAddRecipe = function(newRecipe) {
+  console.log(newRecipe);
 }
+
 
 const init = function() {
   bookmarkView.addHandlerBookmarksInit(controlRenderBookmarksInit);
@@ -98,7 +100,7 @@ const init = function() {
   paginationView.addHandlerClick(controlPagination);
   recipeView.addHandlerUpdateServings(controlServings);
   recipeView.addHandlerAddBookmark(controlAddBookmark);
-  newFeature();
+  addRecipeView.addHandlerUploadRecipe(controlAddRecipe);
 }
 init();
 
